@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.section`
-    height: 10vh;
+    height: 15vh;
     min-height: 65px;
     font-size: 1.5rem;
     display: flex;

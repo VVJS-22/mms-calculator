@@ -7,9 +7,10 @@ const Wrapper = styled.section`
   display: grid;
   grid-template-columns: auto;
   justify-content: space-around;
-  height: 60vh;
+  align-content: center;
+  height: 50vh;
   min-height: 610px;
-  align-items: center;
+  row-gap: 10px;
   padding: 1rem;
   @media screen and (min-width: 330px) {
     grid-template-columns: auto auto;
