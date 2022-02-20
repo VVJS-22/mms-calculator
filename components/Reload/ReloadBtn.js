@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../uiComponents/Button'
+import Button from '../Common/Button'
 
 const ReloadBtn = ({label, onClick}) => {
   return (

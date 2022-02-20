@@ -8,10 +8,10 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    
 `
 
 const Header = () => {
+
   return (
     <Wrapper>
         <h1>MMS Calculator</h1>

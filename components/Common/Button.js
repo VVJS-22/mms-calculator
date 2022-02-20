@@ -7,7 +7,7 @@ const Wrapper = styled.section`
         background: #1f2633;
         box-shadow:  5px 5px 10px #1a202b,
                     -5px -5px 10px #242c3b;
-        color: ${({theme}) => theme.dark.tertiary};
+        color: ${({theme}) => theme.tertiary};
         padding: 1rem;
         font-size: 1rem;
         cursor: pointer;

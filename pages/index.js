@@ -1,24 +1,52 @@
-import styled from 'styled-components'
-import ResultComp from '../components/ResultComp'
-import Header from '../components/Header'
-import ReloadComp from '../components/ReloadComp'
-import Form from '../components/Form'
 import { useState, useMemo, useEffect } from 'react'
-import { mergeSort } from '../store/helpers/sortArray'
-import axios from 'axios'
-import { getMean } from '../store/helpers/getMean'
-import { getMedian } from '../store/helpers/getMeadian'
-import { getStdDeviation } from '../store/helpers/getDeviation'
-import { getMode } from '../store/helpers/getMode'
 
+
+
+// -------------- Components -------------------- //
+
+import Result from '../components/Result'
+import Header from '../components/Header'
+import Reload from '../components/Reload'
+import Form from '../components/Form'
+
+// -------------- Components -------------------- //
+
+
+
+// -------------- External Packages --------------//
+
+import styled from 'styled-components'
+import axios from 'axios'
+
+// -------------- External Packages --------------//
+
+
+
+// -------------- helpers ------------------ //
+
+import { mergeSort } from '../helpers/sortArray'
+import { getMean } from '../helpers/getMean'
+import { getMedian } from '../helpers/getMeadian'
+import { getStdDeviation } from '../helpers/getDeviation'
+import { getMode } from '../helpers/getMode'
+import MetaData from '../public/MetaData'
+
+// -------------- helpers ------------------ //
+
+
+// ------------------ styles --------------------- //
 
 const Wrapper = styled.section`
-  background: ${({ theme }) => theme.dark.primary};
-  color: ${({ theme }) => theme.dark.secondary};
+  background: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.secondary};
   min-height: 100vh;
 `
+// ------------------ styles --------------------- //
+
+
 
 const Home = () => {
+
 
   const [data, setData] = useState([])
   const [url, setUrl] = useState('/api/data5')
@@ -51,18 +79,17 @@ const Home = () => {
     }
   }, [data])
 
-  useEffect(() => {
-    console.log(data)
-  }, [data])
-
 
   return (
+    <>
+    <MetaData />
     <Wrapper>
       <Header />
-      <ResultComp results = {results} />
+      <Result results = {results} />
       <Form setData={setData} />
-      <ReloadComp url={url} setUrl={setUrl}/>
+      <Reload url={url} setUrl={setUrl}/>
     </Wrapper>
+    </>
   )
 }
 

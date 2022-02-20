@@ -1,7 +1,7 @@
 import React from 'react'
-import Button from '../uiComponents/Button'
+import Button from '../Common/Button'
 
-const SubmitBtn = () => {
+const Submit = () => {
     return (
         <Button 
         label="Add" 
@@ -14,4 +14,4 @@ const SubmitBtn = () => {
     )
 }
 
-export default React.memo(SubmitBtn)
+export default React.memo(Submit)

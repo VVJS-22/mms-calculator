@@ -12,7 +12,7 @@ const Wrapper = styled.section`
     min-height: 80px;
 `
 
-const ReloadComp = ({ url, setUrl }) => {
+const Reload = ({ url, setUrl }) => {
 
     const setData1234 = useCallback(() => {
         setUrl('/api/data1234')
@@ -35,4 +35,4 @@ const ReloadComp = ({ url, setUrl }) => {
     )
 }
 
-export default React.memo(ReloadComp)
+export default React.memo(Reload)

@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'
-import Input from '../uiComponents/Input'
-import SubmitBtn from './SubmitBtn'
+import Input from './Input'
+import SubmitBtn from '../Submit'
 
 const Wrapper = styled.form`
     height: 15vh;
@@ -15,11 +15,10 @@ const Form = ({ setData }) => {
 
     const [value, setValue] = useState()
 
-    
-
     const handleSubmit = useCallback((e) => {
         e.preventDefault()
         value && setData((data) => ([...data, +value]))
+        setValue("")
     })
 
     const handleChange = useCallback((e) => {
@@ -32,8 +31,11 @@ const Form = ({ setData }) => {
             type="number" 
             name="number" 
             id="number" 
+            value={value}
             onChange={handleChange}
-            placeholder='Enter a number' />
+            placeholder='Enter a number'
+            autoFocus={true}
+            />
             <SubmitBtn />
         </Wrapper>
     )

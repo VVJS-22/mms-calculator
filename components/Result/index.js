@@ -1,6 +1,5 @@
 import React from 'react'
-import ResultBox from '../uiComponents/ResultBox'
-import { useResultContext } from '../store/contexts/resultContext'
+import ResultBox from './ResultBox'
 import styled from 'styled-components'
 
 const Wrapper = styled.section`
@@ -22,8 +21,6 @@ const Wrapper = styled.section`
 `
 
 const ResultComp = ({ results }) => {
-
-  // console.log(Object.entries(results))
 
   const Result = Object.entries(results)
                   .map(([label, value]) => (

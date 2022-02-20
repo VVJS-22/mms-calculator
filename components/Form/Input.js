@@ -16,8 +16,8 @@ const Wrapper = styled.section`
         padding: 1rem 1.6rem;
         border-radius: 20px 0 0 20px;
         background: #1f2633;
-        box-shadow: inset 5px 5px 10px #0c0f14, inset -5px -5px 10px #323d52; 
-        color: ${({theme}) => theme.dark.secondary};
+        box-shadow: ${({ theme }) => `inset 5px 5px 10px ${theme.darkShadow}, inset -5px -5px 10px ${theme.lightShadow}`};
+        color: ${({theme}) => theme.secondary};
         width: 180px;
         font-weight: 700;
         font-size: 1rem;
@@ -27,7 +27,7 @@ const Wrapper = styled.section`
 const Input = (props) => {
     return (
         <Wrapper>
-            <input {...props}/>
+            <input {...props} />
         </Wrapper>
     )
 }

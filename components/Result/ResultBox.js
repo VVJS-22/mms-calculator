@@ -4,11 +4,10 @@ import styled from 'styled-components'
 const Wrapper = styled.section`
     width: 140px;
     height: 140px;
-    background: ${({ theme }) => theme.dark.primary};
-    color: ${({ theme }) => theme.dark.secondary};
+    background: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.secondary};
     border-radius: 50%;
-    background: #1f2633;
-    box-shadow: inset 5px 5px 10px #0c0f14, inset -5px -5px 10px #323d52;
+    box-shadow: ${({ theme }) => `inset 5px 5px 10px ${theme.darkShadow}, inset -5px -5px 10px ${theme.lightShadow}`};
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,7 +15,7 @@ const Wrapper = styled.section`
     gap: 0.5rem;
     span {
         font-weight: 700;
-        color: ${({ theme }) => theme.dark.tertiary};
+        color: ${({ theme }) => theme.tertiary};
     }
     @media screen and (min-width: 960px) {
       height: 220px;
