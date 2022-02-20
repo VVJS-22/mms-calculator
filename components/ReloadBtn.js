@@ -1,10 +1,10 @@
 import React from 'react'
 import Button from '../uiComponents/Button'
 
-const ReloadBtn = () => {
+const ReloadBtn = ({label, onClick}) => {
   return (
-    <Button label="Reload 1234.json" />
+    <Button label={label} onClick={onClick} />
   )
 }
 
-export default ReloadBtn
+export default React.memo(ReloadBtn)

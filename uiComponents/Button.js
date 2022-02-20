@@ -14,12 +14,12 @@ const Wrapper = styled.section`
     }
 `
 
-const Button = ({label, style, type}) => {
+const Button = ({label, style, type, ...props}) => {
     return (
         <Wrapper>
-            <button style={style} type={type}>{label}</button>
+            <button {...props} style={style} type={type}>{label}</button>
         </Wrapper>
     )
 }
 
-export default Button
+export default React.memo(Button)

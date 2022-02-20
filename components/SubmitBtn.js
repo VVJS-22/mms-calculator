@@ -14,4 +14,4 @@ const SubmitBtn = () => {
     )
 }
 
-export default SubmitBtn
+export default React.memo(SubmitBtn)

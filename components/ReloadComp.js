@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import ReloadBtn from './ReloadBtn'
 import styled from 'styled-components'
 
@@ -12,13 +12,27 @@ const Wrapper = styled.section`
     min-height: 80px;
 `
 
-const ReloadComp = () => {
+const ReloadComp = ({ url, setUrl }) => {
+
+    const setData1234 = useCallback(() => {
+        setUrl('/api/data1234')
+    }, [url])
+
+    const setData4321 = useCallback(() => {
+        setUrl('/api/data4321')
+    }, [url])
+
+
     return (
         <Wrapper>
-            <ReloadBtn label="Reload 1234.json" />
-            <ReloadBtn label="Reload 4321.json" />
+            <ReloadBtn
+            onClick={setData1234}
+            label="Load 1234.json" />
+            <ReloadBtn 
+            onClick={setData4321}
+            label="Load 4321.json" />
         </Wrapper>
     )
 }
 
-export default ReloadComp
+export default React.memo(ReloadComp)

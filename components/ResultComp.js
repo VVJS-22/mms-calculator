@@ -21,13 +21,13 @@ const Wrapper = styled.section`
   }
 `
 
-const ResultComp = () => {
+const ResultComp = ({ results }) => {
 
-  const { initialValue } = useResultContext()
+  // console.log(Object.entries(results))
 
-  const Result = initialValue
-                  .map(({ label, value}) => (
-                          <ResultBox label={label} value={value} />
+  const Result = Object.entries(results)
+                  .map(([label, value]) => (
+                          <ResultBox key={label} label={label} value={value} />
                         )
                       )
 
@@ -39,4 +39,4 @@ const ResultComp = () => {
   )
 }
 
-export default ResultComp
+export default React.memo(ResultComp)

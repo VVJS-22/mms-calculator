@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.section`
@@ -32,4 +33,4 @@ const ResultBox = ({ label, value }) => {
   )
 }
 
-export default ResultBox
+export default React.memo(ResultBox)
