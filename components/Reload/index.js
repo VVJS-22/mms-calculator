@@ -7,7 +7,7 @@ const Wrapper = styled.section`
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    height: calc(20vh - 10px);
+    height: calc(20vh - 64px);
     padding: 1rem;
     min-height: 80px;
 `
